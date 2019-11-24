@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="rockall.rockall.AppTest" duration-ms="10" started-at="2019-11-23T16:41:05Z" finished-at="2019-11-23T16:41:05Z">
+  <suite name="Suite" duration-ms="28979" started-at="2019-11-24T03:46:27Z" finished-at="2019-11-24T03:46:56Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="10" started-at="2019-11-23T16:41:05Z" finished-at="2019-11-23T16:41:05Z">
-    </test> <!-- Command line test -->
-  </suite> <!-- rockall.rockall.AppTest -->
+    <test name="ChromeTest" duration-ms="28979" started-at="2019-11-24T03:46:27Z" finished-at="2019-11-24T03:46:56Z">
+      <class name="rockall.rockall.testNgTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:rockall.rockall.testNgTest@54a097cc]" name="setup" is-config="true" duration-ms="18476" started-at="2019-11-24T03:46:27Z" finished-at="2019-11-24T03:46:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testParameterWithXML()[pri:0, instance:rockall.rockall.testNgTest@54a097cc]" name="testParameterWithXML" duration-ms="9629" started-at="2019-11-24T03:46:46Z" finished-at="2019-11-24T03:46:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testParameterWithXML -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:rockall.rockall.testNgTest@54a097cc]" name="tearDown" is-config="true" duration-ms="845" started-at="2019-11-24T03:46:55Z" finished-at="2019-11-24T03:46:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- rockall.rockall.testNgTest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="70962" started-at="2019-11-23T18:46:52Z" finished-at="2019-11-23T18:48:03Z">
+  <suite name="Suite" duration-ms="53380" started-at="2019-11-24T03:19:58Z" finished-at="2019-11-24T03:20:52Z">
     <groups>
     </groups>
-    <test name="IETest" duration-ms="70962" started-at="2019-11-23T18:46:52Z" finished-at="2019-11-23T18:48:03Z">
+    <test name="IETest" duration-ms="53380" started-at="2019-11-24T03:19:58Z" finished-at="2019-11-24T03:20:52Z">
       <class name="rockall.rockall.testNgTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="setup" is-config="true" duration-ms="40849" started-at="2019-11-24T00:16:52Z" finished-at="2019-11-24T00:17:33Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="setup" is-config="true" duration-ms="23081" started-at="2019-11-24T08:49:58Z" finished-at="2019-11-24T08:50:21Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testParameterWithXML()[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="testParameterWithXML" duration-ms="29307" started-at="2019-11-24T00:17:33Z" finished-at="2019-11-24T00:18:02Z">
+        <test-method status="PASS" signature="testParameterWithXML()[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="testParameterWithXML" duration-ms="29422" started-at="2019-11-24T08:50:21Z" finished-at="2019-11-24T08:50:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="tearDown" is-config="true" duration-ms="782" started-at="2019-11-24T00:18:02Z" finished-at="2019-11-24T00:18:03Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:rockall.rockall.testNgTest@68c4039c]" name="tearDown" is-config="true" duration-ms="859" started-at="2019-11-24T08:50:51Z" finished-at="2019-11-24T08:50:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
