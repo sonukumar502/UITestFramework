@@ -2,26 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-<!-- 	<test name="IETest">
-		<parameter name="browser" value="ie" />
-		<classes>
-			<class name="rockall.rockall.testNgTest">
-			</class>
-		</classes>
-	</test> -->
-	
-	<!-- <test name="FirefoxTest">
-		<parameter name="browser" value="Firefox" />
-		<classes>
-			<class name="rockall.rockall.testNgTest">
-			</class>
-		</classes>
-	</test>  -->
 
-	<test name="ChromeTest">
-		<parameter name="browser" value="Chrome" />
+	<test name="CurrencyConversionTest">
+		<parameter name="browser" value="" />
 		<classes>
-			<class name="rockall.rockall.testNgTest" />
+			<class name="rockall.rockall.AppTest" />
 		</classes>
 	</test>
 	

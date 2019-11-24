@@ -1,29 +1,45 @@
 package rockall.rockall;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.HomePage;
+import utilities.ExcelUtils;
+import utilities.GenericMethods;
 
 public class AppTest {
 	WebDriver driver;
-
+	static ExtentTest test;
+	static ExtentReports report;
+	
+	@BeforeClass
+	public static void startTest(){
+		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
+		test = report.startTest("ExtentDemo");
+ 
+	}
 	@BeforeTest
 	@Parameters("browser")
 	public void setup(String browser) throws Exception {
 		// Check if parameter passed from TestNG is 'firefox'
+		browser = GenericMethods.getValueFromPropertiesFile("BROWSER");
 		if (browser.equalsIgnoreCase("firefox")) {
 			// create firefox instance
 			WebDriverManager.firefoxdriver().setup();
@@ -45,11 +61,15 @@ public class AppTest {
 		// Check if parameter passed as 'IE'
 		else if (browser.equalsIgnoreCase("ie")) {
 			WebDriverManager.iedriver().setup();
+			/*File ieFile=new File("src/resources/driver/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", ieFile.getAbsolutePath());*/
 			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-			capabilities.setCapability(InternetExplorerDriver.
-			  INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
-			capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+			capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			//capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
 			capabilities.setCapability("requireWindowFocus", true);
+			capabilities.setCapability("ignoreProtectedModeSettings", true);
+			capabilities.setCapability("enableElementCacheCleanup", true);
+			capabilities.setCapability("ignoreZoomSetting", true);
 			driver = new InternetExplorerDriver(capabilities);
 		} else {
 			// If no browser passed throw exception
@@ -59,32 +79,32 @@ public class AppTest {
 		driver.manage().window().maximize();
 	}
 
-	@Test
-	public void testParameterWithXML() throws InterruptedException {
-		driver.get("https://transferwise.com/ie/currency-converter/");
-		// Find user name
-		WebElement amt = driver.findElement(By.id("cc-amount"));
-		// Fill user name
-		amt.clear();
-		amt.sendKeys("10000");
-		// Find password
-		WebElement sourceCurrency = driver.findElement(By.xpath("//*[@data-id='sourceCurrency']"));
-		// Fill password
-		sourceCurrency.sendKeys("EUR");
-		driver.findElement(By.xpath("(//*[@role='listbox'])[1]")).click();
-		WebElement targetCurrency = driver.findElement(By.xpath("//*[@data-id='targetCurrency']"));
-		// Fill password
-		targetCurrency.sendKeys("GBP");
-		driver.findElement(By.xpath("(//*[@role='listbox'])[2]")).click();
-		WebElement convertButton = driver.findElement(By.id("convert"));
-		convertButton.click();
+	@Test(dataProvider = "currencyConversionData")
+	public void testParameterWithXML(String amt, String srcCurr, String targetCurr) throws InterruptedException, IOException {
+		driver.get(GenericMethods.getValueFromPropertiesFile("URL"));
+		HomePage home = new HomePage(driver);
+		home.enterAmount(amt);
+		home.selectSourceCurrency(srcCurr);
+		home.selectTargetCurrency(targetCurr);
+		home.convert();
+		home.validateConversion();
+		test.log(LogStatus.PASS, "Navigated to the specified URL");
 	}
-	
-	@AfterMethod
+
+	@AfterClass
 	public void tearDown() {
-		if(driver!=null) {
+		if (driver != null) {
+			report.endTest(test);
+			report.flush();
 			System.out.println("Closing browser");
 			driver.quit();
-		}
+					}
 	}
+
+	@DataProvider
+	public Object[][] currencyConversionData() throws Exception {
+		Object[][] testObjArray = ExcelUtils.getTableArray("src/resources/CurrencyConversionData.xlsx", "Sheet1");
+		return (testObjArray);
+	}
+
 }

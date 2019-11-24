@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods, 3 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.AppTest" hash-for-method="testParameterWithXML(6000000, INR, EUR)">testParameterWithXML(6000000, INR, EUR)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.AppTest" hash-for-method="testParameterWithXML(200, EUR, GBP)">testParameterWithXML(200, EUR, GBP)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.AppTest" hash-for-method="testParameterWithXML(90000, EUR, INR)">testParameterWithXML(90000, EUR, INR)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +126,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.testNgTest" hash-for-method="testParameterWithXML">testParameterWithXML</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.AppTest" hash-for-method="testParameterWithXML(6684, EUR, USD)">testParameterWithXML(6684, EUR, USD)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="rockall.rockall.AppTest" hash-for-method="testParameterWithXML(85000, USD, INR)">testParameterWithXML(85000, USD, INR)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -117,17 +146,73 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">rockall.rockall.testNgTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">rockall.rockall.AppTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testParameterWithXML">
-                  </a> <!-- testParameterWithXML -->
+                  <a name="testParameterWithXML(6000000, INR, EUR)">
+                  </a> <!-- testParameterWithXML(6000000, INR, EUR) -->
                   <span class="method-name">testParameterWithXML</span>
+                  <span class="parameters">(6000000, INR, EUR)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at pages.HomePage.validateConversion(HomePage.java:82)
+	at rockall.rockall.AppTest.testParameterWithXML(AppTest.java:90)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testParameterWithXML(200, EUR, GBP)">
+                  </a> <!-- testParameterWithXML(200, EUR, GBP) -->
+                  <span class="method-name">testParameterWithXML</span>
+                  <span class="parameters">(200, EUR, GBP)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at pages.HomePage.validateConversion(HomePage.java:82)
+	at rockall.rockall.AppTest.testParameterWithXML(AppTest.java:90)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testParameterWithXML(90000, EUR, INR)">
+                  </a> <!-- testParameterWithXML(90000, EUR, INR) -->
+                  <span class="method-name">testParameterWithXML</span>
+                  <span class="parameters">(90000, EUR, INR)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at pages.HomePage.validateConversion(HomePage.java:82)
+	at rockall.rockall.AppTest.testParameterWithXML(AppTest.java:90)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">rockall.rockall.AppTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testParameterWithXML(6684, EUR, USD)">
+                  </a> <!-- testParameterWithXML(6684, EUR, USD) -->
+                  <span class="method-name">testParameterWithXML</span>
+                  <span class="parameters">(6684, EUR, USD)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testParameterWithXML(85000, USD, INR)">
+                  </a> <!-- testParameterWithXML(85000, USD, INR) -->
+                  <span class="method-name">testParameterWithXML</span>
+                  <span class="parameters">(85000, USD, INR)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -142,12 +227,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;test name=&quot;IETest&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;ie&quot;/&gt;
+  &lt;test name=&quot;CurrencyConversionTest&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;rockall.rockall.testNgTest&quot;/&gt;
+      &lt;class name=&quot;rockall.rockall.AppTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- IETest --&gt;
+  &lt;/test&gt; &lt;!-- CurrencyConversionTest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,7 +244,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">IETest (1 class)</span>
+                <span class="test-name">CurrencyConversionTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,16 +270,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testParameterWithXML')
-data.setCell(0, 2, 'rockall.rockall.testNgTest')
-data.setCell(0, 3, 29422);
+data.setCell(0, 2, 'rockall.rockall.AppTest')
+data.setCell(0, 3, 26304);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testParameterWithXML')
+data.setCell(1, 2, 'rockall.rockall.AppTest')
+data.setCell(1, 3, 9053);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testParameterWithXML')
+data.setCell(2, 2, 'rockall.rockall.AppTest')
+data.setCell(2, 3, 6706);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testParameterWithXML')
+data.setCell(3, 2, 'rockall.rockall.AppTest')
+data.setCell(3, 3, 6025);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testParameterWithXML')
+data.setCell(4, 2, 'rockall.rockall.AppTest')
+data.setCell(4, 3, 5380);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 53 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -220,19 +321,47 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">rockall.rockall.testNgTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">rockall.rockall.AppTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setup(ie)</span>
+                <span class="method-name">setup()</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">startTest</span>
+                <span class="method-start">62763 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">testParameterWithXML</span>
-                <span class="method-start">23097 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testParameterWithXML(200, EUR, GBP)</span>
+                <span class="method-start">78562 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testParameterWithXML(90000, EUR, INR)</span>
+                <span class="method-start">104911 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testParameterWithXML(6000000, INR, EUR)</span>
+                <span class="method-start">111620 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testParameterWithXML(6684, EUR, USD)</span>
+                <span class="method-start">117648 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testParameterWithXML(85000, USD, INR)</span>
+                <span class="method-start">126704 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">52521 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">132086 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

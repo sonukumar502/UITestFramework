@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="ChromeTest(failed)">
-    <parameter name="browser" value="Chrome"/>
+  <test name="CurrencyConversionTest(failed)">
+    <parameter name="browser" value=""/>
     <classes>
-      <class name="rockall.rockall.testNgTest">
+      <class name="rockall.rockall.AppTest">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="testParameterWithXML"/>
+          <include name="startTest"/>
+          <include name="testParameterWithXML" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- rockall.rockall.testNgTest -->
+      </class> <!-- rockall.rockall.AppTest -->
     </classes>
-  </test> <!-- ChromeTest(failed) -->
+  </test> <!-- CurrencyConversionTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
