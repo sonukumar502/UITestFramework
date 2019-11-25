@@ -20,15 +20,15 @@ public class ExcelUtils {
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 			int startRow = 1;
-			int startCol = 1;
+			int startCol = 0;
 			int ci, cj;
 			int totalRows = ExcelWSheet.getLastRowNum();
-			int totalCols = 3;
+			int totalCols = 4;
 			tabArray = new String[totalRows][totalCols];
 			ci = 0;
 			for (int i = startRow; i <= totalRows; i++, ci++) {
 				cj = 0;
-				for (int j = startCol; j <= totalCols; j++, cj++) {
+				for (int j = startCol; j < totalCols; j++, cj++) {
 					tabArray[ci][cj] = getCellData(i, j);
 					System.out.print(tabArray[ci][cj]+" ");
 				}

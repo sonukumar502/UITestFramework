@@ -8,38 +8,30 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.Status;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
 import utilities.ExcelUtils;
+import utilities.ExtentReport;
 import utilities.GenericMethods;
 
 public class AppTest {
 	WebDriver driver;
-	static ExtentTest test;
-	static ExtentReports report;
-	
-	@BeforeClass
-	public static void startTest(){
-		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
-		test = report.startTest("ExtentDemo");
- 
-	}
+	ExtentReport ex= new ExtentReport();
 	@BeforeTest
 	@Parameters("browser")
 	public void setup(String browser) throws Exception {
-		// Check if parameter passed from TestNG is 'firefox'
 		browser = GenericMethods.getValueFromPropertiesFile("BROWSER");
+		ex.startReport(System.getProperty("os.name"), browser);
 		if (browser.equalsIgnoreCase("firefox")) {
 			// create firefox instance
 			WebDriverManager.firefoxdriver().setup();
@@ -80,7 +72,8 @@ public class AppTest {
 	}
 
 	@Test(dataProvider = "currencyConversionData")
-	public void testParameterWithXML(String amt, String srcCurr, String targetCurr) throws InterruptedException, IOException {
+	public void testParameterWithXML(String tcName,String amt, String srcCurr, String targetCurr) throws InterruptedException, IOException {
+		ex.test = ex.extent.createTest(tcName, "");
 		driver.get(GenericMethods.getValueFromPropertiesFile("URL"));
 		HomePage home = new HomePage(driver);
 		home.enterAmount(amt);
@@ -88,16 +81,19 @@ public class AppTest {
 		home.selectTargetCurrency(targetCurr);
 		home.convert();
 		home.validateConversion();
-		test.log(LogStatus.PASS, "Navigated to the specified URL");
-	}
+		}
 
+	@AfterMethod
+	public void afterEveryTest(ITestResult result){
+		ex.getResult(result);
+	}
+	
 	@AfterClass
 	public void tearDown() {
 		if (driver != null) {
-			report.endTest(test);
-			report.flush();
 			System.out.println("Closing browser");
 			driver.quit();
+			ex.endTest();
 					}
 	}
 

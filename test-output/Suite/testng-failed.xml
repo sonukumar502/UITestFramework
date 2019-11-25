@@ -8,8 +8,8 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="startTest"/>
-          <include name="testParameterWithXML" invocation-numbers="0 1 2"/>
+          <include name="afterEveryTest"/>
+          <include name="testParameterWithXML" invocation-numbers="0"/>
         </methods>
       </class> <!-- rockall.rockall.AppTest -->
     </classes>
