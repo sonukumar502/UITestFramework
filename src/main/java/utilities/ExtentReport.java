@@ -17,7 +17,7 @@ public class ExtentReport {
 
 	public ExtentReports extent;
 	// helps to generate the logs in test report.
-	public ExtentTest test;
+	public static ExtentTest test;
 
 	public void startReport(String OS, String browser) {
 		// initialize the HtmlReporter

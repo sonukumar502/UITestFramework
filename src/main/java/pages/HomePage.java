@@ -14,7 +14,7 @@ import utilities.ExtentReport;
 import utilities.GenericMethods;
 
 public class HomePage{
-	//ExtentReport ex= new ExtentReport();
+	ExtentReport ex= new ExtentReport();
 	WebDriver driver;
 	@FindBy(id = "cc-amount")
 	private WebElement amountTxt;
@@ -55,19 +55,19 @@ public class HomePage{
 		conversionAmt=amt;
 		GenericMethods.clearText(amountTxt);
 		GenericMethods.enterText(amountTxt, amt);
-		//ex.test.log(Status.INFO, "Entered Amount: "+amt);
+		ex.test.log(Status.INFO, "Entered Amount: "+amt);
 	}
 	
 	public void selectSourceCurrency(String srcCurr){
 		GenericMethods.enterText(sourceCurrencyTxt, srcCurr);
 		GenericMethods.click(sourceCurrencyList);
-		//ex.test.log(Status.INFO, "Source Currency: "+srcCurr);
+		ex.test.log(Status.INFO, "Source Currency: "+srcCurr);
 	}
 	
 	public void selectTargetCurrency(String targetCurr){
 		GenericMethods.enterText(targetCurrencyTxt, targetCurr);
 		GenericMethods.click(targetCurrencyList);
-		//ex.test.log(Status.INFO, "Target Currency: "+targetCurr);
+		ex.test.log(Status.INFO, "Target Currency: "+targetCurr);
 	}
 	
 	public void convert(){
@@ -81,12 +81,12 @@ public class HomePage{
 		float expectedConvertedValue=conversionRate*conversionAmtFloat;
 		if(convertedValueFloat==expectedConvertedValue){
 			System.out.println("Converted value is as expected");
-			//ex.test.log(Status.PASS, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat);
+			ex.test.log(Status.PASS, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat);
 			Assert.assertTrue(true);
 		}
 		else{
 			System.out.println("Converted value is not as expected. Expected: "+expectedConvertedValue+" Actual: "+convertedValueFloat);
-			//ex.test.log(Status.FAIL, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat);
+			ex.test.log(Status.FAIL, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat);
 			Assert.assertTrue(false);
 		}
 		
