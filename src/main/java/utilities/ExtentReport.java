@@ -18,6 +18,7 @@ public class ExtentReport {
 	public ExtentReports extent;
 	// helps to generate the logs in test report.
 	public static ExtentTest test;
+	GenericMethods gm = new GenericMethods();
 
 	public void startReport(String OS, String browser) {
 		// initialize the HtmlReporter
@@ -41,9 +42,10 @@ public class ExtentReport {
 		htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 	}
 	
-	public void getResult(ITestResult result) {
+	public void getResult(ITestResult result) throws Exception {
         if(result.getStatus() == ITestResult.FAILURE) {
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+            gm.takeScreenshot();
             //test.fail(result.getThrowable());
         }
         else if(result.getStatus() == ITestResult.SUCCESS) {

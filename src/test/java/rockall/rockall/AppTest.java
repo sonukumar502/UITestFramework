@@ -20,53 +20,20 @@ import com.aventstack.extentreports.Status;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
+import utilities.Driver;
 import utilities.ExcelUtils;
 import utilities.ExtentReport;
 import utilities.GenericMethods;
 
 public class AppTest {
-	WebDriver driver;
+	public static WebDriver driver;
 	ExtentReport ex= new ExtentReport();
 	@BeforeTest
 	@Parameters("browser")
 	public void setup(String browser) throws Exception {
 		browser = GenericMethods.getValueFromPropertiesFile("BROWSER");
 		ex.startReport(System.getProperty("os.name"), browser);
-		if (browser.equalsIgnoreCase("firefox")) {
-			// create firefox instance
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		}
-		// Check if parameter passed as 'chrome'
-		else if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("start-maximized");
-			options.addArguments("enable-automation");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-infobars");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--disable-browser-side-navigation");
-			options.addArguments("--disable-gpu");
-			driver = new ChromeDriver(options);
-		}
-		// Check if parameter passed as 'IE'
-		else if (browser.equalsIgnoreCase("ie")) {
-			WebDriverManager.iedriver().setup();
-			/*File ieFile=new File("src/resources/driver/IEDriverServer.exe");
-			System.setProperty("webdriver.ie.driver", ieFile.getAbsolutePath());*/
-			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-			capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-			//capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-			capabilities.setCapability("requireWindowFocus", true);
-			capabilities.setCapability("ignoreProtectedModeSettings", true);
-			capabilities.setCapability("enableElementCacheCleanup", true);
-			capabilities.setCapability("ignoreZoomSetting", true);
-			driver = new InternetExplorerDriver(capabilities);
-		} else {
-			// If no browser passed throw exception
-			throw new Exception("Browser is not correct");
-		}
+		driver=Driver.getDriver(browser);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
@@ -84,7 +51,7 @@ public class AppTest {
 		}
 
 	@AfterMethod
-	public void afterEveryTest(ITestResult result){
+	public void afterEveryTest(ITestResult result) throws Exception{
 		ex.getResult(result);
 	}
 	

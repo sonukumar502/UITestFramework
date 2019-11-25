@@ -5,7 +5,7 @@
     <classes>
       <class name="rockall.rockall.AppTest">
         <methods>
-          <include name="testParameterWithXML" invocation-numbers="0 1"/>
+          <include name="testParameterWithXML" invocation-numbers="0 1 2 3 4"/>
         </methods>
       </class> <!-- rockall.rockall.AppTest -->
     </classes>
