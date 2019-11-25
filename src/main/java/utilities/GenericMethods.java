@@ -14,7 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import rockall.rockall.AppTest;
+//import rockall.rockall.AppTest;
 
 public class GenericMethods {
 	WebDriver driver;
@@ -39,7 +39,7 @@ public class GenericMethods {
 	}
 	
 	public String takeScreenshot() throws Exception {
-		driver=AppTest.driver;
+		driver=Driver.driver;
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		Date date= new Date();

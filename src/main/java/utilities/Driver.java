@@ -10,9 +10,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Driver {
-	
+	public static WebDriver driver;
 	public static WebDriver getDriver(String browser) throws Exception{
-		WebDriver driver=null;
+		
 		if (browser.equalsIgnoreCase("firefox")) {
 			// create firefox instance
 			WebDriverManager.firefoxdriver().setup();

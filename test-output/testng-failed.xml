@@ -9,7 +9,7 @@
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="afterEveryTest"/>
-          <include name="testParameterWithXML" invocation-numbers="4"/>
+          <include name="testParameterWithXML" invocation-numbers="1 4"/>
         </methods>
       </class> <!-- rockall.rockall.AppTest -->
     </classes>
