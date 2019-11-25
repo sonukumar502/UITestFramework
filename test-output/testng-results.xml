@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="34295" started-at="2019-11-25T18:27:04Z" finished-at="2019-11-25T18:27:38Z">
+  <suite name="Suite" duration-ms="33057" started-at="2019-11-25T18:55:06Z" finished-at="2019-11-25T18:55:39Z">
     <groups>
     </groups>
-    <test name="CurrencyConversionTest" duration-ms="34295" started-at="2019-11-25T18:27:04Z" finished-at="2019-11-25T18:27:38Z">
+    <test name="CurrencyConversionTest" duration-ms="33057" started-at="2019-11-25T18:55:06Z" finished-at="2019-11-25T18:55:39Z">
       <class name="rockall.rockall.AppTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="setup" is-config="true" duration-ms="11960" started-at="2019-11-25T23:57:04Z" finished-at="2019-11-25T23:57:16Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="setup" is-config="true" duration-ms="11556" started-at="2019-11-26T00:25:06Z" finished-at="2019-11-26T00:25:17Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="6123" started-at="2019-11-25T23:57:17Z" data-provider="currencyConversionData" finished-at="2019-11-25T23:57:23Z">
+        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="6159" started-at="2019-11-26T00:25:18Z" data-provider="currencyConversionData" finished-at="2019-11-26T00:25:24Z">
           <params>
             <param index="0">
               <value>
@@ -44,7 +44,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="6" started-at="2019-11-25T23:57:23Z" finished-at="2019-11-25T23:57:23Z">
+        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="5" started-at="2019-11-26T00:25:24Z" finished-at="2019-11-26T00:25:24Z">
           <params>
             <param index="0">
               <value>
@@ -55,7 +55,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEveryTest -->
-        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3515" started-at="2019-11-25T23:57:23Z" data-provider="currencyConversionData" finished-at="2019-11-25T23:57:27Z">
+        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3041" started-at="2019-11-26T00:25:24Z" data-provider="currencyConversionData" finished-at="2019-11-26T00:25:27Z">
           <params>
             <param index="0">
               <value>
@@ -81,7 +81,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="1" started-at="2019-11-25T23:57:27Z" finished-at="2019-11-25T23:57:27Z">
+        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="1" started-at="2019-11-26T00:25:27Z" finished-at="2019-11-26T00:25:27Z">
           <params>
             <param index="0">
               <value>
@@ -92,7 +92,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEveryTest -->
-        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3117" started-at="2019-11-25T23:57:27Z" data-provider="currencyConversionData" finished-at="2019-11-25T23:57:30Z">
+        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3182" started-at="2019-11-26T00:25:27Z" data-provider="currencyConversionData" finished-at="2019-11-26T00:25:31Z">
           <params>
             <param index="0">
               <value>
@@ -118,7 +118,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="0" started-at="2019-11-25T23:57:30Z" finished-at="2019-11-25T23:57:30Z">
+        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="1" started-at="2019-11-26T00:25:31Z" finished-at="2019-11-26T00:25:31Z">
           <params>
             <param index="0">
               <value>
@@ -129,7 +129,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEveryTest -->
-        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3408" started-at="2019-11-25T23:57:30Z" data-provider="currencyConversionData" finished-at="2019-11-25T23:57:33Z">
+        <test-method status="PASS" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3185" started-at="2019-11-26T00:25:31Z" data-provider="currencyConversionData" finished-at="2019-11-26T00:25:34Z">
           <params>
             <param index="0">
               <value>
@@ -155,18 +155,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="0" started-at="2019-11-25T23:57:33Z" finished-at="2019-11-25T23:57:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testParameterWithXML status=SUCCESS method=AppTest.testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterEveryTest -->
-        <test-method status="FAIL" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="2904" started-at="2019-11-25T23:57:33Z" data-provider="currencyConversionData" finished-at="2019-11-25T23:57:36Z">
+        <test-method status="FAIL" signature="testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="testParameterWithXML" duration-ms="3485" started-at="2019-11-26T00:25:34Z" data-provider="currencyConversionData" finished-at="2019-11-26T00:25:37Z">
           <params>
             <param index="0">
               <value>
@@ -199,7 +188,7 @@
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
-	at pages.HomePage.validateConversion(HomePage.java:90)
+	at pages.HomePage.validateConversion(HomePage.java:92)
 	at rockall.rockall.AppTest.testParameterWithXML(AppTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -232,7 +221,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParameterWithXML -->
-        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="409" started-at="2019-11-25T23:57:36Z" finished-at="2019-11-25T23:57:37Z">
+        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="0" started-at="2019-11-26T00:25:34Z" finished-at="2019-11-26T00:25:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testParameterWithXML status=SUCCESS method=AppTest.testParameterWithXML(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:rockall.rockall.AppTest@6093dd95] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEveryTest -->
+        <test-method status="PASS" signature="afterEveryTest(org.testng.ITestResult)[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="afterEveryTest" is-config="true" duration-ms="1" started-at="2019-11-26T00:25:37Z" finished-at="2019-11-26T00:25:37Z">
           <params>
             <param index="0">
               <value>
@@ -243,7 +243,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEveryTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="tearDown" is-config="true" duration-ms="1718" started-at="2019-11-25T23:57:37Z" finished-at="2019-11-25T23:57:38Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:rockall.rockall.AppTest@6093dd95]" name="tearDown" is-config="true" duration-ms="1389" started-at="2019-11-26T00:25:37Z" finished-at="2019-11-26T00:25:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

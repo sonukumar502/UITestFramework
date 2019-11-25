@@ -38,7 +38,7 @@ public class GenericMethods {
 		return value;
 	}
 	
-	public void takeScreenshot() throws Exception {
+	public String takeScreenshot() throws Exception {
 		driver=AppTest.driver;
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
@@ -47,6 +47,7 @@ public class GenericMethods {
 		String filePath = System.getProperty("user.dir") + "\\target\\screenshots\\"+time+".png";
 		File DestFile = new File(filePath.toString());
 		FileUtils.copyFile(SrcFile, DestFile);
+		return filePath;
 	}
 	
 

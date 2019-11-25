@@ -45,7 +45,7 @@ public class ExtentReport {
 	public void getResult(ITestResult result) throws Exception {
         if(result.getStatus() == ITestResult.FAILURE) {
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
-            gm.takeScreenshot();
+            //gm.takeScreenshot();
             //test.fail(result.getThrowable());
         }
         else if(result.getStatus() == ITestResult.SUCCESS) {

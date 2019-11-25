@@ -16,6 +16,7 @@ import utilities.GenericMethods;
 public class HomePage{
 	ExtentReport ex= new ExtentReport();
 	WebDriver driver;
+	GenericMethods gm = new GenericMethods();
 	@FindBy(id = "cc-amount")
 	private WebElement amountTxt;
 	
@@ -74,7 +75,7 @@ public class HomePage{
 		GenericMethods.click(convertButton);
 	}
 	
-	public void validateConversion(){
+	public void validateConversion() throws Exception{
 		float conversionAmtFloat=Float.valueOf(conversionAmt);
 		float conversionRate=Float.valueOf(converisonRate.getText());
 		float convertedValueFloat=Float.valueOf(convertedValue.getAttribute("value"));
@@ -86,7 +87,8 @@ public class HomePage{
 		}
 		else{
 			System.out.println("Converted value is not as expected. Expected: "+expectedConvertedValue+" Actual: "+convertedValueFloat);
-			ex.test.log(Status.FAIL, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat);
+			String scLoc=gm.takeScreenshot();
+			ex.test.log(Status.FAIL, "Expected Value: "+expectedConvertedValue+" ,Actual Value: "+convertedValueFloat+" ["+ex.test.addScreenCaptureFromPath(scLoc)+"]");
 			Assert.assertTrue(false);
 		}
 		

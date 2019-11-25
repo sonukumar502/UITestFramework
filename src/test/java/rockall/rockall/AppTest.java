@@ -39,7 +39,7 @@ public class AppTest {
 	}
 
 	@Test(dataProvider = "currencyConversionData")
-	public void testParameterWithXML(String tcName,String amt, String srcCurr, String targetCurr) throws InterruptedException, IOException {
+	public void testParameterWithXML(String tcName,String amt, String srcCurr, String targetCurr) throws Exception {
 		ex.test = ex.extent.createTest(tcName, "");
 		driver.get(GenericMethods.getValueFromPropertiesFile("URL"));
 		HomePage home = new HomePage(driver);
